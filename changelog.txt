@@ -1,0 +1,8 @@
+**Change Log**
+
+**1.0.0** - 2024-09-01
+- Added new feature X
+- Fixed bug Y
+
+**0.9.0** - 2024-08-15
+- Initial release
