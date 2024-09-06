@@ -1,8 +1,5 @@
-<strong>Change Log</strong>
+**0.1.1** - Augest 7th 2024
+> Fixed proxy on the index page to not open a cloaked tab but to just do it in-site.
 
-**1.0.0** - 2024-09-01
-- Added new feature X
-- Fixed bug Y
-
-**0.9.0** - 2024-08-15
-- Initial release
+**0.1.0** - Augest 6th 2024
+> Initial release
