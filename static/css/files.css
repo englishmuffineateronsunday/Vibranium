@@ -9,6 +9,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 /* Head */
@@ -75,8 +76,11 @@ main {
     justify-content: center;
     text-align: center;
     margin: 0;
+    padding-top: 80px; 
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
 }
-
 main h1 {
     font-size: 3rem;
     font-weight: bold;
@@ -86,10 +90,10 @@ main h1 {
 /* Search Bar */
 
 .search-bar {
-    position: absolute;
+    position: fixed;
     align-items: center;
     display: flex;
-    top: 100px;
+    top: 50px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #181818;
@@ -161,12 +165,14 @@ footer .links a:hover {
 }
 
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    margin-top: 65px;
     padding: 0 20px;
+    justify-items: center; 
+    align-items: start;
+    min-height: 600px; 
 }
 
 .card {
@@ -174,7 +180,6 @@ footer .links a:hover {
     border-radius: 10px;
     overflow: hidden;
     width: 180px;
-    margin-top: -180px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(72, 0, 255, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
@@ -203,6 +208,7 @@ footer .links a:hover {
     background-clip: text;
     color: transparent;
 }
+
 
 .hidden {
     display: none;
