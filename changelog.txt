@@ -1,4 +1,4 @@
-**Change Log**
+<strong>Change Log</strong>
 
 **1.0.0** - 2024-09-01
 - Added new feature X
