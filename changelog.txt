@@ -1,5 +1,5 @@
-**0.1.1** - Augest 7th 2024
+**0.1.1** - Augest 6th 2024
 > Fixed proxy on the index page to not open a cloaked tab but to just do it in-site.
 
-**0.1.0** - Augest 6th 2024
+**0.1.0** - Augest 5th 2024
 > Initial release
