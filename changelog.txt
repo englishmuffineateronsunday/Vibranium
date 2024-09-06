@@ -1,3 +1,5 @@
+VERSION = 0.1.1
+
 **0.1.1** - Augest 6th 2024
 > Fixed proxy on the index page to not open a cloaked tab but to just do it in-site.
 
