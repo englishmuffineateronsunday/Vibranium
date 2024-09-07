@@ -1,2 +1,0 @@
-# Vibranium
-school unblocked website
