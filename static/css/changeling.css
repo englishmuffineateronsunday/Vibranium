@@ -1,0 +1,76 @@
+#changelog-container {
+    display: none;
+    position: fixed;
+    width: 750px;
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    z-index: 1000;
+    overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #7700e7;
+    border-style: solid;
+}
+
+.simplebar-scrollbar {
+    background-color: #7700e7;
+    border-radius: 10px;
+    width: 5px;
+}
+
+.simplebar-track {
+    background: transparent;
+}
+#changelog-container::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.version-label {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background-color: #7700e7;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.changelog-content h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.changelog-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.changelog-content li {
+    margin-bottom: 5px;
+}
+
+#close-changelog {
+    background-color: #7700e7;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#close-changelog:hover {
+    background-color: #51009c;
+}
