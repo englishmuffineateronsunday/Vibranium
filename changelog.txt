@@ -1,0 +1,11 @@
+VERSION = 0.1.2
+
+**0.1.2** - Augest 6th 2024
+> Added a change-log
+
+**0.1.1** - Augest 6th 2024
+> Fixed the proxy ( hopefully )
+
+**0.1.0** - Augest 5th 2024
+> Initial release
+
