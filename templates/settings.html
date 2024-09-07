@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibranium - Apps</title>
+    <link rel="stylesheet" href="../static/css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="icon" href="../static/images/logo.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="icon">
+                <img src="../static/images/logo.png" alt="Logo Icon">
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html"><i class="material-icons">home</i> Home</a></li>
+                <li><a href="../templates/apps.html"><i class="material-icons">apps</i> Apps</a></li>
+                <li><a href="../templates/files.html"><i class="material-icons">sports_esports</i> Games</a></li>
+                <li><a href="../templates/settings.html"><i class="material-icons">settings</i> Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="settings" class="settings-tab">
+            <h2>Settings</h2>
+            <div class="setting-item">
+                <label for="setting1">Setting 1:</label>
+                <select id="setting1">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="setting2">Setting 2:</label>
+                <input type="checkbox" id="setting2">
+                <label for="setting2">Enable Feature</label>
+            </div>
+            <div class="setting-item">
+                <label for="setting3">Setting 3:</label>
+                <input type="range" id="setting3" min="0" max="100">
+            </div>
+            <button id="close-settings">Close</button>
+        </div>    
+    </main>
+    <footer>
+        <p>&copy; Vibranium 2024</p>
+        <div class="links">
+            <a href="#">GitHub</a> / <a href="#">Discord</a> / <a href="#">Privacy</a>
+        </div>
+    </footer>
+    <script src="../static/js/settings.js"></script>
+</body>
+</html>
