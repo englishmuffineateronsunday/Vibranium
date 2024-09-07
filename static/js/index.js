@@ -1,51 +1,51 @@
-const inputField = document.querySelector('.search-bar input');
-const searchButton = document.querySelector('.search-bar button');
+const searchInp = document.querySelector('.search-bar input');
+const searchBtn = document.querySelector('.search-bar button');
 const header = document.querySelector('header');
 const main = document.querySelector('main');
 const footer = document.querySelector('footer');
-const changelogContainer = document.getElementById('changelog-container');
-const changelogText = document.getElementById('changelog-text');
-const closeChangelogButton = document.getElementById('close-changelog');
-const versionLabel = document.getElementById('version-label');
+const clContain = document.getElementById('changelog-container');
+const clTxt = document.getElementById('changelog-text');
+const clClose = document.getElementById('close-changelog');
+const vL = document.getElementById('version-label');
 
-const CURRENT_VERSION = '0.1.0';
+const cV = '0.1.0';
 
-function isVersionHigher(newVersion, oldVersion) {
-    const [newMajor, newMinor, newPatch] = newVersion.split('.').map(Number);
-    const [oldMajor, oldMinor, oldPatch] = oldVersion.split('.').map(Number);
-    if (newMajor > oldMajor) return true;
-    if (newMajor === oldMajor && newMinor > oldMinor) return true;
-    if (newMajor === oldMajor && newMinor === oldMinor && newPatch > oldPatch) return true;
+function vh(n, o) {
+    const [nMaj, nMin, nPat] = n.split('.').map(Number);
+    const [oMaj, oMin, oPat] = o.split('.').map(Number);
+    if (nMaj > oMaj) return true;
+    if (nMaj === oMaj && nMin > oMin) return true;
+    if (nMaj === oMaj && nMin === oMin && nPat > oPat) return true;
     return false;
 }
-function formatChangelog(text) {
+function formCL(text) {
     return text
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.*?)\*/g, '<em>$1</em>');
 }
-async function fetchChangelog() {
-    const changelogUrl = 'https://englishmuffineateronsunday.github.io/Vibranium/changelog.txt';
+async function fetCL() {
+    const CLurl = 'https://englishmuffineateronsunday.github.io/Vibranium/changelog.txt';
     try {
-        const response = await fetch(changelogUrl);
+        const response = await fetch(CLurl);
         if (response.ok) {
             const text = await response.text();
-            const versionMatch = text.match(/VERSION\s*=\s*(\S+)/);
-            if (versionMatch) {
-                const changelogVersion = versionMatch[1];
-                const savedVersion = localStorage.getItem('appVersion') || CURRENT_VERSION;
+            const versionMajatch = text.match(/VERSION\s*=\s*(\S+)/);
+            if (versionMajatch) {
+                const changelogVersion = versionMajatch[1];
+                const savedVersion = localStorage.getItem('appVersion') || cV;
 
-                if (isVersionHigher(changelogVersion, savedVersion)) {
+                if (vh(changelogVersion, savedVersion)) {
                     setTimeout(() => {
-                        changelogContainer.style.display = 'block';
+                        clContain.style.display = 'block';
                         header.style.display = 'none';
                         main.style.display = 'none';
                         footer.style.display = 'none';
                     }, 100);
 
-                    versionLabel.textContent = `Version: ${changelogVersion}`;
+                    vL.textContent = `Version: ${changelogVersion}`;
                     const cleanText = text.replace(/^VERSION\s*=\s*\S+/m, '').trim();
-                    const formattedText = formatChangelog(cleanText);
-                    changelogText.innerHTML = formattedText;
+                    const formattedText = formCL(cleanText);
+                    clTxt.innerHTML = formattedText;
                 }
             } else {
                 console.log('No version found in changelog.');
@@ -57,119 +57,118 @@ async function fetchChangelog() {
         console.error('Error fetching changelog:', error);
     }
 }
-function updateVersion(newVersion) {
-    localStorage.setItem('appVersion', newVersion);
+function updV(n) {
+    localStorage.setItem('appVersion', n);
 }
-
-closeChangelogButton.addEventListener('click', () => {
-    document.body.remove(changelogContainer)
-    header.style.display = '';
-    main.style.display = '';
-    footer.style.display = '';
-    const changelogVersion = versionLabel.textContent.replace('Version: ', '');
-    updateVersion(changelogVersion);
-});
-
-function openIframe(query) {
+function oIf(q) {
     header.style.display = 'none';
     main.style.display = 'none';
     footer.style.display = 'none';
 
-    const iframeContainer = document.createElement('div');
-    iframeContainer.style.position = 'fixed';
-    iframeContainer.style.top = '0';
-    iframeContainer.style.left = '0';
-    iframeContainer.style.width = '100%';
-    iframeContainer.style.height = '100%';
-    iframeContainer.style.backgroundColor = '#fff';
-    iframeContainer.style.zIndex = '1000';
+    const iC = document.createElement('div');
+    iC.style.position = 'fixed';
+    iC.style.top = '0';
+    iC.style.left = '0';
+    iC.style.width = '100%';
+    iC.style.height = '100%';
+    iC.style.backgroundColor = '#fff';
+    iC.style.zIndex = '1000';
 
-    const iframe = document.createElement('iframe');
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
-    iframe.style.border = 'none';
-    iframe.src = query;
+    const i = document.createElement('iframe');
+    i.style.width = '100%';
+    i.style.height = '100%';
+    i.style.border = 'none';
+    i.src = q;
 
-    const closeButton = document.createElement('button');
-    closeButton.style.position = 'absolute';
-    closeButton.style.top = '10px';
-    closeButton.style.right = '20px';
-    closeButton.style.zIndex = '1001';
-    closeButton.style.width = '25px';
-    closeButton.style.height = '25px';
-    closeButton.style.padding = '0';
-    closeButton.style.border = '2px solid #7700e7';
-    closeButton.style.backgroundColor = 'transparent';
-    closeButton.style.color = '#fff';
-    closeButton.style.cursor = 'pointer';
-    closeButton.style.borderRadius = '50%';
-    closeButton.style.fontSize = '12px';
-    closeButton.style.display = 'flex';
-    closeButton.style.alignItems = 'center';
-    closeButton.style.justifyContent = 'center';
-    closeButton.style.transition = 'background-color 0.3s, color 0.3s';
-    closeButton.innerHTML = '<i class="fas fa-times"></i>';
-    closeButton.onclick = function () {
+    const cB = document.createElement('button');
+    cB.style.position = 'absolute';
+    cB.style.top = '10px';
+    cB.style.right = '20px';
+    cB.style.zIndex = '1001';
+    cB.style.width = '25px';
+    cB.style.height = '25px';
+    cB.style.padding = '0';
+    cB.style.border = '2px solid #7700e7';
+    cB.style.backgroundColor = 'transparent';
+    cB.style.color = '#fff';
+    cB.style.cursor = 'pointer';
+    cB.style.borderRadius = '50%';
+    cB.style.fontSize = '12px';
+    cB.style.display = 'flex';
+    cB.style.alignItems = 'center';
+    cB.style.justifyContent = 'center';
+    cB.style.transition = 'background-color 0.3s, color 0.3s';
+    cB.innerHTML = '<i class="fas fa-times"></i>';
+    cB.onclick = function () {
         header.style.display = '';
         main.style.display = '';
         footer.style.display = '';
-        document.body.removeChild(iframeContainer);
+        document.body.removeChild(iC);
     };
 
-    const reloadButton = document.createElement('button');
-    reloadButton.style.position = 'absolute';
-    reloadButton.style.top = '10px';
-    reloadButton.style.right = '55px';
-    reloadButton.style.zIndex = '1001';
-    reloadButton.style.width = '25px';
-    reloadButton.style.height = '25px';
-    reloadButton.style.padding = '0';
-    reloadButton.style.border = '2px solid #7700e7';
-    reloadButton.style.backgroundColor = 'transparent';
-    reloadButton.style.color = '#fff';
-    reloadButton.style.cursor = 'pointer';
-    reloadButton.style.borderRadius = '50%';
-    reloadButton.style.fontSize = '12px';
-    reloadButton.style.display = 'flex';
-    reloadButton.style.alignItems = 'center';
-    reloadButton.style.justifyContent = 'center';
-    reloadButton.style.transition = 'background-color 0.3s, color 0.3s';
-    reloadButton.innerHTML = '<i class="fas fa-sync"></i>';
-    reloadButton.onclick = function () {
-        iframe.src = query;
+    const rB = document.createElement('button');
+    rB.style.position = 'absolute';
+    rB.style.top = '10px';
+    rB.style.right = '55px';
+    rB.style.zIndex = '1001';
+    rB.style.width = '25px';
+    rB.style.height = '25px';
+    rB.style.padding = '0';
+    rB.style.border = '2px solid #7700e7';
+    rB.style.backgroundColor = 'transparent';
+    rB.style.color = '#fff';
+    rB.style.cursor = 'pointer';
+    rB.style.borderRadius = '50%';
+    rB.style.fontSize = '12px';
+    rB.style.display = 'flex';
+    rB.style.alignItems = 'center';
+    rB.style.justifyContent = 'center';
+    rB.style.transition = 'background-color 0.3s, color 0.3s';
+    rB.innerHTML = '<i class="fas fa-sync"></i>';
+    rB.onclick = function () {
+        i.src = q;
     };
 
-    iframeContainer.appendChild(iframe);
-    iframeContainer.appendChild(closeButton);
-    iframeContainer.appendChild(reloadButton);
-    document.body.appendChild(iframeContainer);
+    iC.appendChild(i);
+    iC.appendChild(cB);
+    iC.appendChild(rB);
+    document.body.appendChild(iC);
 }
-function formatQuery(query) {
-    const domainRegex = /\.(com|org|edu|net|gov|io|co|info)$/i;
+function formQ(q) {
+    const dRegex = /\.(com|org|edu|net|gov|io|co|info)$/i;
 
-    if (query.startsWith('https://')) {
-        return `https://uv-staticf.pages.dev/static/embed#${(query)}`;
-    } else if (domainRegex.test(query)) {
-        return `https://uv-staticf.pages.dev/static/embed#https://www.${encodeURIComponent(query)}`;
+    if (q.startsWith('https://')) {
+        return `https://uv-staticf.pages.dev/static/embed#${(q)}`;
+    } else if (dRegex.test(q)) {
+        return `https://uv-staticf.pages.dev/static/embed#https://www.${encodeURIComponent(q)}`;
     } else {
-        return `https://uv-staticf.pages.dev/static/embed#https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        return `https://uv-staticf.pages.dev/static/embed#https://www.google.com/search?q=${encodeURIComponent(q)}`;
     }
 }
-function performSearch() {
-    let query = inputField.value.trim();
-    if (query) {
-        const formattedQuery = formatQuery(query);
-        openIframe(formattedQuery);
+function perS() {
+    let q = searchInp.value.trim();
+    if (q) {
+        const fQ = formQ(q);
+        oIf(fQ);
     }
 }
+
+clClose.addEventListener('click', () => {
+    clContain.remove();
+    header.style.display = '';
+    main.style.display = '';
+    footer.style.display = '';
+    const changelogVersion = vL.textContent.replace('Version: ', '');
+    updV(changelogVersion);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchChangelog();
+    fetCL();
 
-    searchButton.addEventListener('click', performSearch);
-    inputField.addEventListener('keydown', (event) => {
+    searchBtn.addEventListener('click', perS);
+    searchInp.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
-            performSearch();
+            perS();
         }
     });
 });
