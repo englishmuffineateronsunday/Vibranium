@@ -3,6 +3,18 @@ const cardButtons = document.querySelectorAll('.card-button');
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 const cardsContainer = document.querySelector('.cards-container');
+const categoryPicker = document.getElementById('category-picker');
+
+const categoryMapping = {
+    'actionadventure': ['action', 'adventure'],
+    'arcade': ['arcade'],
+    'shooting': ['shooting', 'shooter'],
+    'cardriving': ['car', 'driving'],
+    'clicker': ['clicker'],
+    'sports': ['sports'],
+    'stratpuzzquiz': ['strategy', 'puzzle', 'quiz'],
+    'horrorscary': ['horror', 'scary']
+};
 
 function getFavorites() {
     return JSON.parse(localStorage.getItem('favorites')) || [];
@@ -48,38 +60,46 @@ function handleFavoriteClick(event) {
 }
 function filterCards() {
     const query = searchInput.value.trim().toLowerCase();
+    const selectedCategory = categoryPicker.value.toLowerCase();
+
     cardButtons.forEach(button => {
         const titleElement = button.querySelector('.card-title');
         const title = titleElement ? titleElement.textContent.trim().toLowerCase() : '';
-        button.classList.toggle('hidden', !title.includes(query));
+        const categories = button.getAttribute('data-category').toLowerCase().split(' ');
+
+        const matchesSearch = title.includes(query);
+        const matchesCategory = selectedCategory === 'all' || 
+            Object.values(categoryMapping).flat().some(cat => categories.includes(cat) && categoryMapping[selectedCategory]?.includes(cat));
+
+        button.classList.toggle('hidden', !(matchesSearch && matchesCategory));
     });
+
     sortCards();
 }
+
 function sortCards() {
     const favorites = getFavorites();
-
     const sortedButtons = Array.from(cardButtons).sort((a, b) => {
-        const iconA = a.querySelector('.favorite-icon');
-        const iconB = b.querySelector('.favorite-icon');
+        const titleA = a.querySelector('.card-title').textContent.trim();
+        const titleB = b.querySelector('.card-title').textContent.trim();
 
-        if (!iconA || !iconB) return 0;
+        if (titleA === 'Request a Game') return -1;
+        if (titleB === 'Request a Game') return 1;
+        if (titleA === 'Request an App') return -1;
+        if (titleB === 'Request an App') return 1;
 
-        const idA = iconA.getAttribute('data-id');
-        const idB = iconB.getAttribute('data-id');
-        
-        if (!idA || !idB) return 0;
+        const isAFavorite = a.querySelector('.favorite-icon')?.getAttribute('data-id') && favorites.includes(a.querySelector('.favorite-icon').getAttribute('data-id'));
+        const isBFavorite = b.querySelector('.favorite-icon')?.getAttribute('data-id') && favorites.includes(b.querySelector('.favorite-icon').getAttribute('data-id'));
 
-        const isAFavorite = favorites.includes(idA);
-        const isBFavorite = favorites.includes(idB);
-        
         if (isAFavorite && !isBFavorite) return -1;
         if (!isAFavorite && isBFavorite) return 1;
-        
+
         return 0;
     });
 
     sortedButtons.forEach(button => cardsContainer.appendChild(button));
 }
+
 function setupEventListeners() {
     cardButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -93,11 +113,13 @@ function setupEventListeners() {
 
     searchButton.addEventListener('click', filterCards);
     searchInput.addEventListener('input', filterCards);
+    categoryPicker.addEventListener('change', filterCards);
 }
+
 function init() {
     initializeFavorites();
     setupEventListeners();
-    sortCards();
+    filterCards();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
