@@ -139,7 +139,7 @@ main h1 {
     background-color: #181818;
     padding: 10px 10px;
     border-radius: 10px;
-    width: 400px;
+    width: 300px;
     z-index: 1000;
 }
 
@@ -166,6 +166,47 @@ main h1 {
     font-size: 1rem;
     order: 2;
 }
+
+/* Category Picker */
+.category-picker {
+    align-items: center;
+    margin-left: 600px;
+    background-color: #181818;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    z-index: 1000;
+    position: relative;
+    top: 119px;
+    height: 25px;
+    width: 200px;
+}
+
+.category-picker select {
+    background: #181818;
+    border: 1px solid #181818;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Cpath d="M8 11.5L3.5 7h9L8 11.5z" fill="%23fff"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.category-picker select option {
+    background-color: #181818;
+    width: 100%;
+    border: #181818;
+    color: #fff;
+}
+
+/* Footer */
 
 footer {
     position: relative;
