@@ -246,7 +246,7 @@ footer .links a:hover {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 30px;
-    margin-top: 200px;
+    margin-top: 155px;
     padding: 0 20px;
     justify-items: center; 
     align-items: start;
