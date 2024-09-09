@@ -1,6 +1,7 @@
 VERSION = 0.1.5
 
 **0.1.5** - September 8th 2024
+> Added game stats, profile pictures, and custom names. (Saves in local)
 > Added a category filter so you could find your preferred games quicker.
 > Replaced settings with profile where you can view all your favorites and game stats (soon)
 
