@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibranium - Apps</title>
+    <title>Vibranium - Profile</title>
     <link rel="stylesheet" href="../static/css/settings.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,32 +22,38 @@
                 <li><a href="../index.html"><i class="material-icons">home</i> Home</a></li>
                 <li><a href="../templates/apps.html"><i class="material-icons">apps</i> Apps</a></li>
                 <li><a href="../templates/files.html"><i class="material-icons">sports_esports</i> Games</a></li>
-                <li><a href="../templates/settings.html"><i class="material-icons">settings</i> Settings</a></li>
+                <li><a href="../templates/settings.html"><i class="material-icons">account_circle</i> Profile</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div id="settings" class="settings-tab">
-            <h2>Settings</h2>
-            <div class="setting-item">
-                <label for="setting1">Setting 1:</label>
-                <select id="setting1">
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
+        <div class="profile-container">
+            <div class="profile-picture">
+                <img id="profile-img" src="../static/images/default.png" alt="Profile Picture">
+                <div class="upload-overlay">
+                    <label for="file-upload" class="upload-label">
+                        <i class="material-icons">camera_alt</i>
+                    </label>
+                    <input type="file" id="file-upload" accept="image/*">
+                </div>
             </div>
-            <div class="setting-item">
-                <label for="setting2">Setting 2:</label>
-                <input type="checkbox" id="setting2">
-                <label for="setting2">Enable Feature</label>
+            <div class="username">
+                <span id="username">username</span>
+                <i class="material-icons edit-icon">edit</i>
             </div>
-            <div class="setting-item">
-                <label for="setting3">Setting 3:</label>
-                <input type="range" id="setting3" min="0" max="100">
+            <div class="stats scrollable-section">
+                <h2><i class="fas fa-gamepad"></i> Game Stats</h2>
+                <ul>
+                    <li>Coming soon...</li>
+                </ul>
             </div>
-            <button id="close-settings">Close</button>
-        </div>    
+            <div class="favorites scrollable-section">
+                <h2><i class="fas fa-star"></i> Favorites</h2>
+                <ul>
+
+                </ul>
+            </div>
+        </div>
     </main>
     <footer>
         <p>&copy; Vibranium 2024</p>
