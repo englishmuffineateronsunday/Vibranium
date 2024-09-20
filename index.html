@@ -52,6 +52,20 @@
             <a href="#">GitHub</a> / <a href="#">Discord</a> / <a href="#">Privacy</a>
         </div>
     </footer>
+    <div class="floating-bubbles" id="floating-bubbles"></div>
     <script src="static/js/index.js"></script>
+    <script>
+        const bubblesContainer = document.getElementById('floating-bubbles');
+        for (let i = 0; i < 20; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.left = `${Math.random() * 100}%`;
+            bubble.style.top = `${Math.random() * 100}%`;
+            bubble.style.width = `${Math.random() * 50 + 10}px`;
+            bubble.style.height = bubble.style.width;
+            bubble.style.animationDuration = `${Math.random() * 10 + 5}s`;
+            bubblesContainer.appendChild(bubble);
+        }
+    </script>
 </body>
 </html>
