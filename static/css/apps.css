@@ -50,7 +50,29 @@ body {
     height: 100vh;
     overflow: hidden;
 }
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--primary-color) 10%, transparent 10%);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    animation: footerBg 10s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+}
 
+@keyframes footerBg {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-20px, -20px);
+    }
+}
 main::-webkit-scrollbar {
     width: 0;
     height: 0; 
@@ -115,6 +137,7 @@ nav ul li a:hover {
 nav ul li a i.material-icons {
     font-size: 18px;
     color: var(--primary-color);
+    align-items: center;
 }
 
 nav ul li a img {
