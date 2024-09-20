@@ -2,6 +2,9 @@ VERSION = 0.1.6
 
 **0.1.6** - September 19th, 2024
 > Fixed the games so stop bugging me every chance you see me >:(
+> Design Change
+  - Made the cards simplistic.
+  - Other aesthetic changes.
 
 **0.1.5** - September 8th, 2024
 > Added game statistics tracking:
