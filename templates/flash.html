@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibranium</title>
+    <link rel="stylesheet" href="../static/css/flash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Your+Custom+Font:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="icon" href="../static/images/logo.png">
+</head>
+<body data-theme="default">
+    <header>
+        <div class="logo">
+            <div class="icon">
+                <img src="../static/images/logo.png" alt="Logo Icon">
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html"><i class="material-icons">home</i> Home</a></li>
+                <li><a href="../templates/apps.html"><i class="material-icons">apps</i> Apps</a></li>
+                <li><a href="../templates/files.html"><i class="material-icons">sports_esports</i> Games</a></li>
+                <li><a href="../templates/flash.html"><i class="material-icons">bolt</i> Flash</a></li>
+                <li><a href="../templates/settings.html"><i class="material-icons">account_circle</i> Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search games">
+            <button id="search-button">
+                <i class="material-symbols-outlined">search</i>
+            </button>
+        </div>
+        <div class="cards-container">
+            <button class="card-button" data-url="../files/req.html">
+                <div class="card">
+                    <img data-src="https://glacierarcade.win/assets/thumbnail/request.png" alt="thummy" class="card-thumbnail">
+                    <h3 class="card-title">Request a Flash Game</h3>
+                </div>
+            </button>
+            <button class="card-button" data-url="../files/flash/gunMayhem2.html">
+                <div class="card">
+                    <div class="favorite-icon" data-id="1"><i class="fas fa-star"></i></div>
+                    <img src="../static/images/bolt.png" alt="App Thumbnail" class="card-thumbnail" loading="lazy">
+                    <h3 class="card-title">Gun Mayhem 2 (FLASH)</h3>
+                </div>
+            </button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Vibranium 2024</p>
+        <div class="links">
+            <a href="#">GitHub</a> / <a href="#">Discord</a> / <a href="#">Privacy</a>
+        </div>
+    </footer>
+</body>
+<script src="../static/js/apps.js"></script>
+<script src="../static/js/versionChecker.js"></script>
+</html>
