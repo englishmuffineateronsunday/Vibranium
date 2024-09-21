@@ -28,31 +28,34 @@
     </header>
     <main>
         <div class="profile-container">
-            <div class="profile-picture">
-                <img id="profile-img" src="../static/images/default.png" alt="Profile Picture">
-                <div class="upload-overlay">
-                    <label for="file-upload" class="upload-label">
-                        <i class="material-icons">camera_alt</i>
-                    </label>
-                    <input type="file" id="file-upload" accept="image/*">
+            <div class="profile-left">
+                <div class="profile-picture">
+                    <img id="profile-img" src="../static/images/default.png" alt="Profile Picture">
+                    <div class="upload-overlay">
+                        <label for="file-upload" class="upload-label">
+                            <i class="material-icons">camera_alt</i>
+                        </label>
+                        <input type="file" id="file-upload" accept="image/*">
+                    </div>
+                </div>
+                <div class="username">
+                    <span id="username">username</span>
+                    <i class="material-icons edit-icon">edit</i>
                 </div>
             </div>
-            <div class="username">
-                <span id="username">username</span>
-                <i class="material-icons edit-icon">edit</i>
-            </div>
-            <div class="stats scrollable-section">
-                <h2><i class="fas fa-gamepad"></i> Game Stats</h2>
-                <ul class="game-stats-list">
-                    
-                </ul>
-            </div>
-            
-            <div class="favorites scrollable-section">
-                <h2><i class="fas fa-star"></i> Favorites</h2>
-                <ul>
+            <div class="profile-right">
+                <div class="stats">
+                    <h2><i class="fas fa-gamepad"></i> Game Stats</h2>
+                    <ul class="game-stats-list">
 
-                </ul>
+                    </ul>
+                </div>
+                <div class="favorites">
+                    <h2><i class="fas fa-star"></i> Favorites</h2>
+                    <ul>
+
+                    </ul>
+                </div>
             </div>
         </div>
     </main>
