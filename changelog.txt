@@ -1,4 +1,8 @@
-VERSION = 0.1.7
+VERSION = 0.1.8
+
+**0.1.8** September 22nd 2024
+> Fixed the ruffle player
+> Added 7 flash games
 
 **0.1.7**  September 20th 2024
 > Design Changes
