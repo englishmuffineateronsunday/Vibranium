@@ -4,7 +4,7 @@ VERSION = 0.1.9
 > Added user chat (BETA)
   - You are able to create rooms
   - Multiple people could join your room
-  - Live chat; so you immediatly receive a message
+  - Live chat; so you immediately receive a message
   - Expect bugs; contact us if you notice any bugs, I'll do my best to fix them.
 
 **0.1.8** September 22nd 2024
