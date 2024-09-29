@@ -62,8 +62,8 @@ let currentRoom = {
 
 function initializePubNub() {
     pubnub = new PubNub({
-        publishKey: window.PUBNUB_PUBLISH_KEY,
-        subscribeKey: window.PUBNUB_SUBSCRIBE_KEY,
+        publishKey: window.env.PUBNUB_PUBLISH_KEY,
+        subscribeKey: window.env.PUBNUB_SUBSCRIBE_KEY,
         userId: currentUser.userId,
     });
     
