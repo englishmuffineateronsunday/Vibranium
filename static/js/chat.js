@@ -62,10 +62,10 @@ let currentRoom = {
 
 function initializePubNub() {
     pubnub = new PubNub({
-        publishKey: process.env.PUBNUB_PUBLISH_KEY || process.env.PUBNUB_PUBLISH_KEY,
-        subscribeKey: process.env.PUBNUB_SUBSCRIBE_KEY || process.env.PUBNUB_SUBSCRIBE_KEY,
-        userId: currentUser.userId
-    });    
+        publishKey: window.PUBNUB_PUBLISH_KEY,
+        subscribeKey: window.PUBNUB_SUBSCRIBE_KEY,
+        userId: currentUser.userId,
+    });
     
     pubnub.addListener({
         message: (msgEvent) => {
