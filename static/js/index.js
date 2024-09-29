@@ -138,11 +138,11 @@ function formQ(q) {
     const dRegex = /\.(com|org|edu|net|gov|io|co|info)$/i;
 
     if (q.startsWith('https://')) {
-        return `https://uv-staticf.pages.dev/static/embed#${(q)}`;
+        return `https://nowgg-bypass.pages.dev/static/embed.html#${(q)}`;
     } else if (dRegex.test(q)) {
-        return `https://uv-staticf.pages.dev/static/embed#https://www.${encodeURIComponent(q)}`;
+        return `https://nowgg-bypass.pages.dev/static/embed.html#https://www.${encodeURIComponent(q)}`;
     } else {
-        return `https://uv-staticf.pages.dev/static/embed#https://www.google.com/search?q=${encodeURIComponent(q)}`;
+        return `https://nowgg-bypass.pages.dev/static/embed.html#https://www.google.com/search?q=${encodeURIComponent(q)}`;
     }
 }
 function perS() {
