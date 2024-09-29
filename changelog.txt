@@ -1,4 +1,11 @@
-VERSION = 0.1.8
+VERSION = 0.1.9
+
+**0.1.9** September 29th 2024
+> Added user chat (BETA)
+  - You are able to create rooms
+  - Multiple people could join your room
+  - Live chat; so you immediatly receive a message
+  - Expect bugs; contact us if you notice any bugs, I'll do my best to fix them.
 
 **0.1.8** September 22nd 2024
 > Fixed the ruffle player
