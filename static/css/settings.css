@@ -46,6 +46,7 @@
     --accent-color: #ff00d9;
 }
 
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -81,10 +82,12 @@ body::before {
         transform: translate(-20px, -20px);
     }
 }
+
 main::-webkit-scrollbar {
     width: 0;
     height: 0; 
 }
+
 /* Header */
 header {
     width: 100%;
@@ -102,7 +105,6 @@ header .logo .icon svg {
     height: 50px;
     border-radius: 12px;
     margin-top: -15px;
-    margin-left: 0px;
 }
 
 /* Navigation */
@@ -160,12 +162,12 @@ main {
     overflow-y: auto; /* Enable scrolling for the main content */
     max-height: calc(100vh - 40px); /* Adjust based on your header/footer height */
 }
+
 main h1 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 40px;
 }
-
 
 footer {
     position: absolute;
@@ -205,7 +207,6 @@ footer .links a:hover {
     margin-top: -75px;
     border: var(--accent-color) solid;
 }
-
 
 .profile-left {
     display: flex;
@@ -326,6 +327,7 @@ footer .links a:hover {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .stats, .favorites {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
@@ -363,38 +365,66 @@ footer .links a:hover {
 .stats li:last-child, .favorites li:last-child {
     border-bottom: none;
 }
+
 .game-stats-list {
     margin-top: 10px;
 }
 
-/* Custom scrollbar styles */
 .stats ul::-webkit-scrollbar, 
 .favorites ul::-webkit-scrollbar,
 main::-webkit-scrollbar {
-    width: 0;
-    height: 0;
+    width: 4px;
 }
 
-.stats ul::-webkit-scrollbar-track, 
-.favorites ul::-webkit-scrollbar-track,
-main::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.stats ul::-webkit-scrollbar-thumb, 
+.stats ul::-webkit-scrollbar-thumb,
 .favorites ul::-webkit-scrollbar-thumb,
 main::-webkit-scrollbar-thumb {
-    background-color: transparent;
+    background: var(--accent-color);
+    border-radius: 4px;
 }
 
-/* For Firefox */
-.stats ul, .favorites ul, main {
-    scrollbar-width: none;
-    scrollbar-color: transparent transparent;
+.stats ul::-webkit-scrollbar-thumb:hover,
+.favorites ul::-webkit-scrollbar-thumb:hover,
+main::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
 }
 
 @media (max-width: 768px) {
     .profile-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
+        margin-top: 0;
+        padding: 15px;
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-container h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .username #username {
+        font-size: 1.2rem; 
+    }
+
+    .stats h2, .favorites h2 {
+        font-size: 1rem;
+    }
+
+    .stats li, .favorites li {
+        padding: 8px 0; 
     }
 }
