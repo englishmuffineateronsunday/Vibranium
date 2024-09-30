@@ -197,6 +197,7 @@ footer .links a:hover {
 .profile-container {
     width: 90%;
     max-width: 800px;
+    max-height: 400px; /* Adjust this value as necessary */
     background-color: #1e1e1e;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -204,7 +205,7 @@ footer .links a:hover {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 30px;
-    margin-top: -75px;
+    margin-top: -150px;
     border: var(--accent-color) solid;
 }
 
@@ -327,6 +328,9 @@ footer .links a:hover {
     border-radius: 5px;
     cursor: pointer;
 }
+.stats {
+    max-height: 100px;
+}
 
 .stats, .favorites {
     background-color: rgba(255, 255, 255, 0.05);
@@ -353,7 +357,7 @@ footer .links a:hover {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    max-height: 120px; /* Height for 4 items (assuming 40px per item) */
+    max-height: 70px; /* Height for 4 items (assuming 40px per item) */
     overflow-y: auto;
 }
 
