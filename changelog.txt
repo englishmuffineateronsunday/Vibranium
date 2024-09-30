@@ -6,6 +6,25 @@ VERSION = 0.1.9
   - Multiple people could join your room
   - Live chat; so you immediately receive a message
   - Expect bugs; contact us if you notice any bugs, I'll do my best to fix them.
+> Re-added Theems
+  - Fixed them and now they work
+  - Removed the logo on the tab pages to improve asthetics
+  - Added 6 Theems
+> Changed some html and CSS styles
+  - Settings.html
+    - Added a theme selector
+  - Apps.html
+  - Files.html
+  - Chat.html
+  - Index.html
+> Added a new proxy on the Index page
+  - (BETA) It may get blocked by the schools DNS
+  - Changed the links for the web Apps
+> Added a new app
+  - Aptoid
+  - Hopefully fixed some apps.
+  - Fixed webretro ( In Testing )
+> Fixed some performance issues
 
 **0.1.8** September 22nd 2024
 > Fixed the ruffle player
