@@ -1,14 +1,63 @@
+:root {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #7700e7;
+}
+
+[data-theme="purple"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #7700e7;
+}
+
+[data-theme="lightblue"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #00aaff;
+}
+
+[data-theme="pinkishred"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #ff0055;
+}
+
+[data-theme="green"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #00ff4c;
+}
+
+[data-theme="orange"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #ff7300;
+}
+
+[data-theme="blue"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #0800ff;
+}
+
+[data-theme="pink"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #ff00d9;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #111;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     overflow: hidden;
 }
+
 body::before {
     content: '';
     position: fixed;
@@ -16,7 +65,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, #7700e7, 10%, transparent 10%);
+    background: radial-gradient(circle, var(--accent-color), 10%, transparent 10%);
     background-size: 20px 20px;
     opacity: 0.1;
     animation: footerBg 10s linear infinite;
@@ -36,21 +85,19 @@ main::-webkit-scrollbar {
     width: 0;
     height: 0; 
 }
-
-/* Head */
-
+/* Header */
 header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10px;
+    padding: 20px 0px;
     background: transparent;
     position: relative;
     top: 0;
 }
 
-header .logo .icon img {
+header .logo .icon svg {
     width: 50px;
     height: 50px;
     border-radius: 12px;
@@ -58,14 +105,12 @@ header .logo .icon img {
     margin-left: 0px;
 }
 
-/* Nav Bar */
-
-
+/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3px 48px;
+    padding: 15px 35px;
     height: 5px;
 }
 
@@ -74,12 +119,11 @@ nav ul {
     display: flex;
     gap: 20px;
     margin: 0;
-    margin-top: 5px;
     padding: 0;
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: var(--text-color);
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 20px;
@@ -97,7 +141,8 @@ nav ul li a:hover {
 
 nav ul li a i.material-icons {
     font-size: 18px;
-    color: #7700e7;
+    color: var(--accent-color);
+    align-items: center;
 }
 
 nav ul li a img {
@@ -144,7 +189,7 @@ footer .links a {
 }
 
 footer .links a:hover {
-    color: #fff; 
+    color: var(--accent-color);
 }
 
 .profile-container {
@@ -158,7 +203,9 @@ footer .links a:hover {
     grid-template-columns: 1fr 2fr;
     gap: 30px;
     margin-top: -75px;
+    border: var(--accent-color) solid;
 }
+
 
 .profile-left {
     display: flex;
@@ -196,11 +243,16 @@ footer .links a:hover {
     transition: opacity 0.3s ease;
 }
 
-.upload-label {
-    color: #fff; 
-    font-size: 1rem; 
-    pointer-events: none; 
+.upload-overlay input[type="file"] {
+    display: none;
 }
+
+.upload-overlay label {
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+}
+
 .profile-picture:hover .upload-overlay {
     opacity: 1;
 }
@@ -212,6 +264,7 @@ footer .links a:hover {
     opacity: 0;
     cursor: pointer;
 }
+
 .favorites a {
     color: #fff; 
     text-decoration: none; 
@@ -224,29 +277,55 @@ footer .links a:hover {
 
 .favorites a:hover,
 .favorites a:focus {
-    color: #7700e7; 
+    color: var(--accent-color);
     text-decoration: none; 
 }
 
 .username {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
+.username #username {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
 .edit-icon {
     cursor: pointer;
-    color: #7700e7;
+    color: var(--accent-color);
+    font-size: 1.2rem;
 }
 
 .profile-right {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 10px;
 }
 
+.theme-selector {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.theme-selector label {
+    color: var(--text-color);
+}
+
+.theme-selector select {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 .stats, .favorites {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
@@ -257,7 +336,7 @@ footer .links a:hover {
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.2rem;
-    color: #fff;
+    color: var(--text-color);
     display: flex;
     align-items: center;
 }
@@ -265,7 +344,7 @@ footer .links a:hover {
 .stats h2 i, .favorites h2 i {
     font-size: 1.4rem;
     margin-right: 8px;
-    color: #7700e7;
+    color: var(--accent-color);
 }
 
 .stats ul, .favorites ul {
@@ -283,6 +362,9 @@ footer .links a:hover {
 
 .stats li:last-child, .favorites li:last-child {
     border-bottom: none;
+}
+.game-stats-list {
+    margin-top: 10px;
 }
 
 /* Custom scrollbar styles */
