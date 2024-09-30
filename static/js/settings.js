@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         usernameInput.style.color = '#fff';
         usernameInput.style.backgroundColor = 'transparent';
         usernameInput.style.border = 'none';
-        usernameInput.style.borderBottom = '2px solid #7700e7';
+        usernameInput.style.borderBottom = '2px solid var(--accent-color)';
         usernameInput.style.padding = '3px';
         usernameInput.style.marginLeft = '5px';
         usernameInput.style.outline = 'none';
@@ -131,3 +131,31 @@ document.addEventListener('DOMContentLoaded', () => {
     loadFavorites();
     loadUserProfile();
 });
+
+document.getElementById('theme').addEventListener('change', function() {
+    const selectedTheme = this.value;
+    setTheme(selectedTheme);
+});
+
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+
+    const userProfile = JSON.parse(localStorage.getItem('userProfile')) || {};
+    userProfile.theme = theme;
+    localStorage.setItem('userProfile', JSON.stringify(userProfile));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    applyStoredTheme();
+});
+
+function applyStoredTheme() {
+    const userProfile = JSON.parse(localStorage.getItem('userProfile')) || {};
+    if (userProfile.theme) {
+        document.documentElement.setAttribute('data-theme', userProfile.theme);
+        const themeSelect = document.getElementById('theme');
+        if (themeSelect) {
+            themeSelect.value = userProfile.theme;
+        }
+    }
+}
