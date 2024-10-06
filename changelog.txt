@@ -1,16 +1,25 @@
-VERSION = 0.1.9
+VERSION = 0.2.0
+
+**0.2.0** October 6th 2024
+> Added Hacked games to the Flash page
+  - Slope
+  - Ducklife 1
+  - Ducklife 2
+  - Ducklife 3
+  - Ducklife 4
+  - Ducklife 5
 
 **0.1.9** September 29th 2024
 > Added user chat (BETA)
-  - You are able to create rooms
+  - You can create rooms
   - Multiple people could join your room
   - Live chat; so you immediately receive a message
-  - Expect bugs; contact us if you notice any bugs, I'll do my best to fix them.
-> Re-added Theems
+  - You should expect bugs; please contact us if you notice any bugs, I'll do my best to fix them.
+> Re-added Themes
   - Fixed them and now they work
-  - Removed the logo on the tab pages to improve asthetics
+  - Removed the logo on the tab pages to improve aesthetics
   - Added 6 Theems
-> Changed some html and CSS styles
+> Changed some HTML and CSS styles
   - Settings.html
     - Added a theme selector
   - Apps.html
@@ -18,12 +27,12 @@ VERSION = 0.1.9
   - Chat.html
   - Index.html
 > Added a new proxy on the Index page
-  - (BETA) It may get blocked by the schools DNS
+  - (BETA) It may get blocked by the school's DNS
   - Changed the links for the web Apps
 > Added a new app
   - Aptoid
-  - Hopefully fixed some apps.
-  - Fixed webretro ( In Testing )
+  - Hopefully, I fixed some apps.
+  - Fixed web retro ( In Testing )
 > Fixed some performance issues
 
 **0.1.8** September 22nd 2024
@@ -33,11 +42,11 @@ VERSION = 0.1.9
 **0.1.7**  September 20th 2024
 > Design Changes
   - Layout is better
-  - Index page has gotten revamped
+  - Index page has been revamped
   - Game page has gotten a slight layout change
   - Revamped the Profile page
 > Added Flash tab
-  - Play from a list of flash games ( more will be added daily or sub daily )
+  - Play from a list of flash games ( more will be added daily or sub-daily )
 
 **0.1.6** - September 19th, 2024
 > Fixed the games so stop bugging me every chance you see me >:(
@@ -50,7 +59,7 @@ VERSION = 0.1.9
   - User-uploadable profile pictures (max size: 2MB, formats: jpg, png)
   - Custom usernames (2-20 characters, alphanumeric and underscores only)
 > Introduced a category filter system:
-  - Added 10 main categories (Action, Puzzle, Strategy, etc.)
+  - 10 main categories (Action, Puzzle, Strategy, etc.) were added.
   - Implemented multi-select filtering
 > Replaced settings page with a comprehensive profile page:
   - Centralized location for user information, favorites, and game stats
@@ -86,4 +95,4 @@ VERSION = 0.1.9
 > Initial release:
   - Launched with 360 playable games across various genres
   - Implemented basic user interface with game grid and search functionality
-  - Established connection to game servers via proxy
+  - Established connection to game servers via a proxy
