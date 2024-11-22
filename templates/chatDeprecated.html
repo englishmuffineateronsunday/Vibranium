@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibranium</title>
+    <link rel="stylesheet" href="../static/css/flash.css">
+    <link rel="stylesheet" href="../static/css/changeling.css">
+    <link rel="stylesheet" href="../static/css/newChat.css">
+    <link rel="icon" href="../static/images/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.min.css">
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-theme="default">
+    <div id="changelog-container" style="display: none;">
+        <div class="changelog-content">
+            <div class="version-label" id="version-label">Version</div>
+            <h2>Changelog</h2>
+            <pre id="changelog-text"></pre>
+            <button id="close-changelog">Close</button>
+        </div>
+    </div>
+    <header>
+        <div class="logo">
+            <div class="icon">
+                <svg class="logo" id="logo" src="../static/images/Vibranium.svg" alt="Logo Icon"></svg>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html"><i class="material-icons">home</i> Home</a></li>
+                <li><a href="../templates/chat.html"><i class="material-icons">message</i> Chat</a></li>
+                <li><a href="../templates/apps.html"><i class="material-icons">apps</i> Apps</a></li>
+                <li><a href="../templates/files.html"><i class="material-icons">sports_esports</i> Games</a></li>
+                <li><a href="../templates/flash.html"><i class="material-icons">bolt</i> Flash</a></li>
+                <li><a href="../templates/settings.html"><i class="material-icons">account_circle</i> Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        </div>
+        <div id="profileModal" class="modal">
+            <div class="modal-content">
+                <div class="profile-picture" id="profile-picture">
+                    <img src="../static/images/default.png" alt="Profile Picture" />
+                    <input type="file" id="profile-picture-input" accept="image/*" style="display: none;">
+                    <span class="camera-icon material-icons" id="camera-icon">camera_alt</span>
+                </div>
+                <div class="profile-info">
+                    <h2 class="profile-name">Username</h2>
+                    <p class="profile-initials">US</p>
+                </div>
+                <button class="next-button"><i class="material-icons">arrow_forward</i></button>
+            </div>
+        </div>
+        
+        <div id="roomChoiceModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <h2>Create or Join Room</h2>
+                <button class="btn" id="createRoomOptionBtn">Create Room</button>
+                <button class="btn" id="joinRoomOptionBtn">Join Room</button>
+            </div>
+        </div>        
+        <div id="roomModal" class="modal" style="display:none;">
+            <div class="modal-content">
+              <h2>Create Room</h2>
+              <input type="text" id="roomNameInput" placeholder="Enter Room Name">
+              <select id="roomPrivacy">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+              </select>
+              <br><br>
+              <button class="btn" id="createRoomBtn">Create Room</button>
+            </div>
+        </div>
+        <div id="joinRoomModal" class="modal" style="display:none;">
+            <div class="modal-content">
+              <h2>Join Room</h2>
+              <input type="text" id="joinRoomIdInput" placeholder="Enter Channel ID">
+              <br><br>
+              <button class="btn" id="joinRoomBtn">Join Room</button>
+            </div>
+        </div>
+        <div id="chatContainer" class="chatContainer" style="display: none;">
+            <div id="messageContainer" class="messageContainer">
+            </div>
+            <div id="messageInputContainer" class="messageInputContainer">
+                <input class="messageInputContainer-inp" id="messageInput" placeholder="Type your message here" style="width: calc(100% - 100px);">
+                <button class="messageInputContainer-btn btn" id="sendMessageBtn">Send</button>
+            </div>
+        </div>
+        <div class="roominform" id="roomInfo"></div>
+        <div id="profileInfo"></div>
+        
+    </main>
+    <div class="floating-bubbles" id="floating-bubbles"></div>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.8.2.7.js"></script>
+    <script src="../static/js/chat.js"></script></body>
+    <script src="../static/js/theme.js"></script>
+</html>
