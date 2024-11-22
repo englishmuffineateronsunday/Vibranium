@@ -407,3 +407,40 @@ main::-webkit-scrollbar-thumb:hover {
         padding: 8px 0; 
     }
 }
+.save-data {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+#export-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 12px; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#export-button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+#import-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 12px; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#import-button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
