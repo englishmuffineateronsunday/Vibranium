@@ -1,9 +1,60 @@
+:root {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #7700e7;
+    --accent-color-r: calc((var(--accent-color) >> 16) & 0xFF);
+    --accent-color-g: calc((var(--accent-color) >> 8) & 0xFF);
+    --accent-color-b: calc(var(--accent-color) & 0xFF);
+}
+
+[data-theme="purple"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #7700e7;
+}
+
+[data-theme="lightblue"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #00aaff;
+}
+
+[data-theme="pinkishred"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #ff0055;
+}
+
+[data-theme="green"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #00ff4c;
+}
+
+[data-theme="orange"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #ff7300;
+}
+
+[data-theme="blue"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #0800ff;
+}
+
+[data-theme="pink"] {
+    --bg-color: #111;
+    --text-color: #fff;
+    --accent-color: #ff00d9;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #111;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +70,6 @@ header {
     align-items: center;
     padding: 20px 50px;
     background: transparent;
-    position: relative;
     top: 0;
 }
 
@@ -66,7 +116,7 @@ nav ul li a:hover {
 
 nav ul li a i.material-icons {
     font-size: 18px;
-    color: #7700e7;
+    color: var(--accent-color);
     align-items: center;
 }
 
@@ -85,7 +135,7 @@ main {
 .controls {
     width: 150px; 
     padding: 10px;
-    border: rgb(90, 8, 255) solid 1px;
+    border: var(--accent-color) solid 1px;
     background-color: rgba(0, 0, 0, 0.425); 
     border-radius: 10px; 
     margin-right: 20px; 
@@ -108,7 +158,7 @@ main {
     position: relative; 
     height: 80vh; 
     width: 1000px;
-    border: 2px solid rgb(90, 8, 255); 
+    border: 2px solid var(--accent-color); 
     border-radius: 10px; 
     background-color: #181818; 
     overflow: hidden; 
@@ -143,5 +193,5 @@ iframe {
 }
 
 .iframe-controls button:hover {
-    color: #7700e7; 
+    color: var(--accent-color); 
 }
