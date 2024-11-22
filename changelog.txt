@@ -1,4 +1,13 @@
-VERSION = 0.2.0
+VERSION = 0.2.1
+
+**0.2.1** November 21st 2024
+> Removed the 'More Games' button on the games page
+> Deprecated chat
+> Added a new chatting feature ( better )
+> Added new Roblox ( mexigames )
+> Added Snap ( mexigames )
+> Fixed themes on the game iframes
+> Fixing broken games
 
 **0.2.0** October 6th 2024
 > Added Hacked games to the Flash page
