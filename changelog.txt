@@ -1,6 +1,7 @@
 VERSION = 0.2.1
 
 **0.2.1** November 21st 2024
+> Added a save functionality in #settings. I have not fully implemented this yet as it's in BETA. Not 100% if it works.
 > Removed the 'More Games' button on the games page
 > Deprecated chat
 > Added a new chatting feature ( better )
