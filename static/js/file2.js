@@ -23,6 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function fuckADS() {
+        const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+        const moreGamesButton = iframeDocument.getElementById('button');
+        if (moreGamesButton) {
+            moreGamesButton.remove();
+        }
+    }
+
     fullscreenButton.addEventListener('click', enterFullscreen);
     reloadButton.addEventListener('click', reloadIframe);
+    iframe.addEventListener('load', fuckADS);
 });

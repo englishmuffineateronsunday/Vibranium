@@ -24,7 +24,7 @@ function formCL(text) {
         .replace(/\*(.*?)\*/g, '<em>$1</em>');
 }
 async function fetCL() {
-    const CLurl = 'https://englishmuffineateronsunday.github.io/Vibranium/changelog.txt';
+    const CLurl = 'https://raw.githubusercontent.com/englishmuffineateronsunday/Vibranium/refs/heads/main/changelog.txt';
     try {
         const response = await fetch(CLurl);
         if (response.ok) {

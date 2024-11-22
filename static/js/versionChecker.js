@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const changelogUrl = 'https://englishmuffineateronsunday.github.io/Vibranium/changelog.txt';
+    const changelogUrl = 'https://raw.githubusercontent.com/englishmuffineateronsunday/Vibranium/refs/heads/main/changelog.txt';
 
     async function checkForUpdates() {
         try {
